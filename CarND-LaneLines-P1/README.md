@@ -38,3 +38,23 @@ Weighted Image: Merges the output of hough transform with the original image to 
 [![Solid White Right Generated Video](https://github.com/csharpshooter/UDA-SDCND/blob/master/CarND-LaneLines-P1/test_videos_output/solidWhiteRight.mp4)
 
 [![Solid Yellow Left Generated Video](https://github.com/csharpshooter/UDA-SDCND/blob/master/CarND-LaneLines-P1/test_videos_output/solidYellowLeft.mp4)
+
+----------------------------------------------------------------------------------------------------------------------------
+## Shortcomings
+I have observed some problems with the current pipeline:
+
+* In the challenge video at around second 5 the lane is covered by some shadow and I believe my code fails to detect it. I am trying to fix this issue by applying the HSL color filtering as another pre-processing step but currently it is not completed.
+* Straight lines do not work when there are curves on the road.
+* Hough Transform is tricky to get right with its parameters. I am not sure I got the best settings.
+
+----------------------------------------------------------------------------------------------------------------------------
+## Future Improvements
+* One approach would like to implement a lane detector whch would consider the data from previous input frames.
+* Also would like to be better identify lanes, I we can convert image to HSV and HSL format for preprocessing
+* One further step to explore would be to calculate the weighted average of line coefficients , giving a higher weight to more recent coefficients as they belong to more recent frames; I believe frame locality would play a critical role in getting near-perfect lines on video.
+* In the future, I also plan to use deep learning to identify lanes and compare those results against what I obtained with a pure computer vision approach.
+
+#### All code is available on Github.
+----------------------------------------------------------------------------------------------------------------------------
+
+
